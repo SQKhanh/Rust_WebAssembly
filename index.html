@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WASM with Rust</title>
+  </head>
+  <body>
+    <h1>Rust + WASM Example</h1>
+    <button id="greetButton">Greet</button>
+
+    <script type="module">
+      import init, { greet } from './pkg/grrs.js';
+
+      async function run() {
+        // Khởi tạo WASM từ tệp xuất ra từ wasm-pack
+        await init();
+
+        // Gắn sự kiện cho nút
+        const greetButton = document.getElementById("greetButton");
+        greetButton.addEventListener("click", () => {
+          alert(greet("World")); // Gọi hàm greet từ Rust
+        });
+      }
+
+      run();
+    </script>
+  </body>
+</html>
