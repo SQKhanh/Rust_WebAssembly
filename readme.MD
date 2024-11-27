@@ -27,11 +27,11 @@ wasm-pack build
 ### Chạy Web:
 
 ```
-npx http-server
+npx http-server -p 3000
 ```
 
 hoặc
 
 ```
-npx http-server -c-1 --mime "application/wasm:wasm"
+npx http-server -p 3000 -c-1 --mime "application/wasm:wasm"
 ```
