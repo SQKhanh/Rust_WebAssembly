@@ -29,3 +29,9 @@ wasm-pack build
 ```
 npx http-server
 ```
+
+hoặc
+
+```
+npx http-server -c-1 --mime "application/wasm:wasm"
+```
